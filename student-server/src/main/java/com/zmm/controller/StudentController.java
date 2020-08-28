@@ -12,7 +12,8 @@ public class StudentController {
     DiscoveryClient discoveryClient;
 
     @GetMapping("/dc")
-    public String dc() {
+    public String dc() throws InterruptedException {
+        Thread.sleep(5000l);
         //获取服务清单
         String services = "2001 ===> Services: " + discoveryClient.getServices();
         System.out.println(services);

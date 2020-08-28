@@ -1,10 +1,12 @@
 package com.zmm.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.zmm.client.StudentClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -66,4 +68,25 @@ public class TeacherController {
         return zmmIndex;
     }
 
+    @Autowired
+    ConsumerService consumerService;
+
+    @GetMapping("/hystrix-ribbon")
+    public String hystrixTest() {
+        return consumerService.consumer();
+    }
+
+    @Component
+    class ConsumerService {
+
+        @HystrixCommand(fallbackMethod = "fallback")
+        public String consumer() {
+            return "hystrix ===> " + ribbonRestTemplate.getForObject("http://student-server/dc", String.class);
+        }
+
+        public String fallback() {
+            return "fallback";
+        }
+
+    }
 }

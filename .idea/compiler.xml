@@ -6,10 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="turbine" />
         <module name="regis-center" />
         <module name="consul-client" />
         <module name="teacher-server" />
         <module name="student-client" />
+        <module name="hystrix-dashboard" />
+        <module name="api-gateway" />
         <module name="student-server" />
         <module name="score-server" />
         <module name="config-center" />

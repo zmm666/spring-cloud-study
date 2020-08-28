@@ -16,6 +16,9 @@
         <module>score-server</module>
         <module>student-client</module>
         <module>config-center</module>
+        <module>hystrix-dashboard</module>
+        <module>turbine</module>
+        <module>api-gateway</module>
     </modules>
 
     <parent>
