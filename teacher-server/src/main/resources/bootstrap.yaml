@@ -1,11 +1,51 @@
 spring:
   application:
     name: teacher-server
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zmm_db?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+#配合配置中心
   cloud:
     config:
       uri: http://localhost:1201/
       profile: dev
       label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: 2101
+
+management:
+  security:
+    enabled : false
+
+#打开配置中心，下面的可以注释掉
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1001/eureka/
+#zmm:
+#  index: zmm_index_dev
+
+
+mybatis:
+  type-aliases-package: com.zmm.domain
+#  mapper-locations: classpath:mapper/*.xml
+#通用mapper配置
+mapper:
+  #公用接口类路径
+  mappers: com.zmm.BaseMapper
+  identity: MYSQL
+
+
+
+
+
+
+

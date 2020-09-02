@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="turbine" />
         <module name="regis-center" />
+        <module name="stream-server" />
         <module name="consul-client" />
         <module name="teacher-server" />
         <module name="student-client" />
