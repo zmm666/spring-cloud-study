@@ -1,9 +1,7 @@
-package com.zmm.domain;
+package com.zmm.pojo;
 
-import javax.persistence.Table;
+public class StudentResultVo {
 
-@Table(name = "student")
-public class StudentInfo {
     private String sId;
 
     private String sName;

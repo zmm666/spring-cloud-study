@@ -1,17 +1,8 @@
 package com.zmm.mapper;
 
 import com.zmm.domain.StudentInfo;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface StudentInfoMapper {
-    int deleteByPrimaryKey(String sId);
+public interface StudentInfoMapper extends Mapper<StudentInfo> {
 
-    int insert(StudentInfo record);
-
-    int insertSelective(StudentInfo record);
-
-    StudentInfo selectByPrimaryKey(String sId);
-
-    int updateByPrimaryKeySelective(StudentInfo record);
-
-    int updateByPrimaryKey(StudentInfo record);
 }
