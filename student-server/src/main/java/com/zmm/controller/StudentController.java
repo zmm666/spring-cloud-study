@@ -28,6 +28,10 @@ public class StudentController implements StudentClient {
         return services;
     }
 
+    /**
+     * 获取学生信息
+     * @return
+     */
     @Override
     public List<StudentResultVo> search() {
         return studentService.search();

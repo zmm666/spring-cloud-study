@@ -20,6 +20,7 @@
         <module>turbine</module>
         <module>api-gateway</module>
         <module>stream-server</module>
+        <module>kafka-server</module>
     </modules>
 
     <parent>
